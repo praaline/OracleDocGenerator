@@ -72,7 +72,7 @@ public class AnalysePackageCommand : AsyncCommand<AnalysePackageCommandSettings>
             File.WriteAllText($"docs/catalog_{packageName}.json", JsonSerializer.Serialize(catalog, new JsonSerializerOptions { WriteIndented = true }));
 
             ctx.Status("Generating Markdown documentation...");
-            new MarkdownDocGenerator().Generate(catalog);
+            new PlSqlCodeMarkdownDocGenerator().Generate(catalog);
 
             ctx.Status("Generating dependency graph...");
             var graphGen = new DependencyGraphGenerator();

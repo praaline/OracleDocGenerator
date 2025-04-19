@@ -1,7 +1,7 @@
 using System.Text;
 using System.Text.Json;
 
-public class MarkdownDocGenerator
+public class PlSqlCodeMarkdownDocGenerator
 {
     public void Generate(object catalog)
     {

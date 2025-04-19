@@ -65,7 +65,7 @@ public class AnalyseSchemaCommand : AsyncCommand<AnalyseSchemaCommandSettings>
             File.WriteAllText("docs/db_catalog.json", JsonSerializer.Serialize(catalog, new JsonSerializerOptions { WriteIndented = true }));
 
             ctx.Status("Generating Markdown documentation...");
-            new MarkdownDocGenerator().Generate(catalog);
+            new PlSqlCodeMarkdownDocGenerator().Generate(catalog);
 
             ctx.Status("Generating dependency graphs...");
             var graphGen = new DependencyGraphGenerator();
